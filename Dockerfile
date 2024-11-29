@@ -1,12 +1,14 @@
-FROM node:16-alpine
+FROM php:8.2-apache
 
-WORKDIR /app
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-COPY package*.json ./
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-RUN npm install
+COPY . /var/www/html/
 
-COPY . .
+WORKDIR /var/www/html
+RUN chown -R www-data:www-data /var/www/html
 
-EXPOSE 3000
+EXPOSE 80
+
 
