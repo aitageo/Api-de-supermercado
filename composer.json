@@ -1,5 +1,17 @@
 {
+    "name": "aitageo/api-productos",
+    "description": "una Api REST de productos de un supermercado",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alfonso Adame Rueda"
+        }
+    ],
+    "minimum-stability": "stable",
     "require": {
         "firebase/php-jwt": "^6.10"
     }
 }
+
+
